@@ -11,7 +11,54 @@
 <span class="govuk-caption-l">July 2026</span>
 <h2 class="govuk-heading-l">Version five prototype</h2>
 
-<p>TBC</p>
+<p class="govuk-body">In version 5 we have:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Removed the country question because we have confirmation that this can be determined from the new address entered (using residency).</li>
+  <li>Moved the care home question to only be asked for manual address entry because we have confirmation that care homes and hospitals can be determined from the new address entered via the look-up (using residency).</li>
+  <li>Moved the question ‘Is this move permanent or temporary?’ to the first question in the journey. This is to future-proof the journey for temporary moves when we will accept future dates, and enable validation of date on the next screen.</li>
+  <li>Created a new start page (2 design options including a standard page and interruption card) following UR feedback and confirmation from BAs that citizens do not need to report changes to out-of-scope benefits in all circumstances.</li>
+</ul>
+
+<p class="govuk-body">Changes include:</p>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Making this page dynamic. It will only be shown to those in receipt of a combination of benefits including AA and IIDB.</li>
+  <li>Making the content specific to the required scenario, including direct links to the line of business GOV.UK page (IIDB).</li>
+  <li>Condensed content to reduce cognitive load.</li>
+  <li>Clearer title to create a smoother transition from the personal details page, ‘Change your address’.</li>
+</ol>
+
+<p class="govuk-body">Created 3 versions of the confirmation screen with dynamic content to reflect the required scenarios for Day 1 MVP, including:</p>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Scenario 1 (combination of AA/SP/CA/HB): Address updated for all benefits. Confirmation page only.</li>
+  <li>Scenario 2 (combination with AA and PC): Address updated for all benefits. Citizen must call PC to provide more information. Confirmation page only, including specific signposting information for PC.</li>
+  <li>Scenario 3 (combination with AA and IIDB): Address updated for all benefits except IIDB. Citizen must call IIDB directly. Includes a start page (2 design options) and confirmation page with signposting to IIDB.</li>
+  <li>Added a dynamic list of benefits to reinforce which benefits the change of address will be applied to.</li>
+</ol>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>Iterated the content on the knock-out screen when the citizen enters a future date to provide clearer guidance on the issue and how to correct it. This includes a link to return to the previous date entry screen if this was an error.</li>
+  <li>Added an ‘or’ separator and ‘My address is not listed’ option to the address selection screen to test this design. This aligns with the HMRC address pattern and differs from the V4 version we tested (which used a link).</li>
+  <li>Added an address confirmation screen to align with the DWP pattern.</li>
+  <li>Added a country selector screen for the manual address entry route (before the manual address entry screen), and removed the ‘country’ field from the manual address entry screen as it did not provide the relevant options (for example, abroad).</li>
+  <li>Removed the ‘county’ field from the manual address entry screen as residency does not have a use case for it.</li>
+  <li>Updated the confirmation page wording to ‘24 hours’ to reflect expected processing timeframes (including contingency if the API is down), and aligned the declaration wording with the AA Apply journey. This is subject to change once the combined declaration wording is agreed.</li>
+  <li>Updated the customer account banner wording to ‘24 hours’ to reflect expected processing timeframes (including contingency if the API is down).</li>
+</ul>
+
+<p class="govuk-body">
+  The 'other screens' in this prototype version are for testing purposes and include:
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>No address found. This guides the user towards searching again or using manual address entry.</li>
+  <li>Service unavailable. For when the service is intentionally unavailable.</li>
+  <li>Service unavailable. Internal 500 error.</li>
+  <li>Work available report. This is a report of the information captured in RaCo. It will only be used for audit purposes and will be stored in ECMS.</li>
+  <li>Start (interruption). This is the alternative design of the start screen used to test user preferences for the design and content. This is only applicable to benefit combinations including AA and IIDB (Scenario 3).</li>
+</ul>
 
 <p><a class="govuk-link" href="/v05/index.html">View version 5</a></p>
 
