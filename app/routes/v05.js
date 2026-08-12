@@ -8,12 +8,8 @@ router.get(`${baseUrl}/index.html`, function(req, res) {
     res.redirect(`${baseUrl}/customer-account/account-home`)
 })
 
-// Declare the RACO start point - when did you move?
+// Declare the RACO start point - is this move permanent or temporary?
 router.get(`${baseUrl}/report-a-change-once/index.html`, function(req, res) {
-    res.redirect(`${baseUrl}/report-a-change-once/start`)
-})
-
-router.post(`${baseUrl}/report-a-change-once/start`, function(req, res) {
     res.redirect(`${baseUrl}/report-a-change-once/is-this-move-permanent-or-temporary`)
 })
 
