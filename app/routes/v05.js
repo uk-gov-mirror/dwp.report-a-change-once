@@ -50,17 +50,17 @@ router.post(`${baseUrl}/report-a-change-once/when-did-you-move-to-your-new-addre
   res.redirect(`${baseUrl}/report-a-change-once/address/find-your-new-address`)
 })
 
-router.post(`${baseUrl}/report-a-change-once/address/find-your-new-address`, function(req, res) {
-    const postcode = req.body.postcode
-        ?.replace(/\s+/g, ' ')
-        .trim()
-        .toUpperCase()
+router.post(`${baseUrl}/report-a-change-once/address/find-your-new-address`, function (req, res) {
+  const postcode = req.body.postcode
+    ?.trim()
+    .replace(/\s+/g, '')
+    .toUpperCase()
 
-    if (postcode === 'IP33 1LT') {
-        return res.redirect(`${baseUrl}/report-a-change-once/address/no-address-found`)
-    }
+  if (postcode === 'IP331LT') {
+    return res.redirect(`${baseUrl}/report-a-change-once/address/no-address-found`)
+  }
 
-    res.redirect(`${baseUrl}/report-a-change-once/address/select-your-new-address`)
+  res.redirect(`${baseUrl}/report-a-change-once/address/select-your-new-address`)
 })
 
 router.post(`${baseUrl}/report-a-change-once/address/select-your-new-address`, function(req, res) {
@@ -139,6 +139,20 @@ router.post(`${baseUrl}/report-a-change-once/address/confirm-manual-address`, fu
 
 router.post(`${baseUrl}/report-a-change-once/check-answers/journey-2`, function(req, res) {
     res.redirect(`${baseUrl}/report-a-change-once/confirmation`)
+})
+
+// Declare the entry point service - customer account
+router.get(`${baseUrl}/customer-account/personal-details-banner`, function (req, res) {
+  const postcode = req.session.data['postcode']
+    ?.trim()
+    .replace(/\s+/g, '')
+    .toUpperCase()
+
+  if (postcode === 'IP331LT') {
+    return res.redirect(`${baseUrl}/customer-account/personal-details-banner-manual-address`)
+  }
+
+  return res.redirect(`${baseUrl}/customer-account/personal-details-banner-address-lookup`)
 })
 
 // Drop out screens
