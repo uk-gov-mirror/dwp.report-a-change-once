@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "You cannot use this service" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ title }}
+      </h1>
+
+      <p class="govuk-body">To tell us about a move to a care home or hospital contact the benefit team directly.</p>
+
+      <p class="govuk-body">Find their contact details in a letter they have sent to you, or in <a href="">guidance about the benefit on GOV.UK (opens in a new tab)</a>.</p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Sign out",
+          href: "/index"
+        }) }}
+        {{ govukButton({
+          text: "Go back to account home",
+          classes: "govuk-button--secondary",
+          href: "/v06/customer-account/account-home"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

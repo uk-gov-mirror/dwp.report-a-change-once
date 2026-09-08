@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Change your address: Attendance Allowance" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      {% call govukPanel({
+        titleText: title,
+        classes: "govuk-panel--interruption",
+        actions: {
+          items: [
+            {
+              text: "Continue",
+              href: "#",
+              type: "button"
+            }
+          ]
+        }
+      }) %}
+        <p class="govuk-body">
+          You can only use this service to change your address for Attendance Allowance at the moment.
+        </p>
+        <p class="govuk-body">
+          To change your address for your other benefits you will need to contact each benefit office directly. We will let you know how to do this later.
+        </p>
+      {% endcall %}
+
+  </div>
+
+{% endblock %}

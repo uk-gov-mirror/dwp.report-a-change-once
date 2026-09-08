@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Confirm address" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        <h1 class="govuk-heading-l">
+          {{ title }}
+        </h1>
+
+        <p>No addresses found for <strong>{{ data['postcode'] }}</strong> <a href='/v05/report-a-change-once/address/find-your-new-address'>Change<span class="govuk-visually-hidden"> address</span></a></p>
+
+        <p class="govuk-body">
+          20 Dorchester Road<br />Bury St Edmunds<br />IP33 1LT
+        </p>
+
+        {{ govukButton({
+          text: "Use this address"
+        }) }}
+
+      </form>
+
+    <p class="govuk-body">
+      <a href="select-your-new-address" class="govuk-link govuk-link--no-visited-state">Use a different address</a>
+    </p>
+
+    <p class="govuk-body">
+      <a href="enter-address-manually" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+    </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

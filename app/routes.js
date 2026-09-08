@@ -8,6 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Require any prototype version specific routes files
 
+require('./routes/v06')(router)
 require('./routes/v05')(router)
 require('./routes/v04')(router)
 

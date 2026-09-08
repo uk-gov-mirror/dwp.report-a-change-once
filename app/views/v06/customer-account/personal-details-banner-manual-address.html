@@ -1,0 +1,150 @@
+{% set serviceName = "View your personal details" %}
+{% extends "layouts/main.html" %}
+{% set title = "Personal details" %}
+
+{% block pageTitle %}
+   {{ title }} – Customer view
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+{% call govukNotificationBanner() %}
+  <h3 class="govuk-notification-banner__heading">
+    We have received your change of home address
+  </h3>
+  <p class="govuk-body">Your new home address will show on this page once processed. This can take up to 24 hours.</p>
+{% endcall %}
+
+<h1 class="govuk-heading-xl">{{ title }}</h1>
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Your details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Sarah Phillips"
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "1 January 1978"
+      }
+    },
+    {
+      key: {
+        text: "National Insurance number"
+      },
+      value: {
+        html: "AB 12 34 56 C"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Home address"
+      },
+      value: {
+        html: "20 Dorchester Road<br />Bury St Edmunds<br />IP33 1LT"
+      },
+      actions: {
+        items: [
+          {
+            href: "/v06/report-a-change-once/index.html",
+            text: "Change",
+            visuallyHiddenText: "whether details are known"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address we send letters to"
+      },
+      value: {
+        html: "2 Guild Street<br />London<br />SE23 6FH"
+      }
+    },
+    {
+      key: {
+        text: "Mobile phone"
+      },
+      value: {
+        html: "07700 900 457"
+      }
+    },
+    {
+      key: {
+        text: "Home phone"
+      },
+      value: {
+        html: "01234 567 890"
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        html: "sarah.phillips@example.com"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Your benefits"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Benefits"
+      },
+      value: {
+        html: "Attendance Allowance<br>Carer's Allowance"
+      }
+    }
+  ]
+}) }}
+
+<form method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Go back to account home"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

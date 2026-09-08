@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "When did you move to your new address?" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+      {{ govukDateInput({
+        id: "move-date",
+        namePrefix: "move-date",
+        fieldset: {
+          legend: {
+            text: title,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 27 9 2025"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+      isButton: yes
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

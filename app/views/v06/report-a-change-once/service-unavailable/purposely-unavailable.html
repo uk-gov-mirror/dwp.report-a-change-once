@@ -1,0 +1,41 @@
+{% set showBackLink = false %}
+{% extends "layouts/main.html" %}
+
+{% set title = "Sorry, this service is unavailable" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ title }}
+      </h1>
+      <p class="govuk-body">You will be able to use the service later.</p>
+
+      <p class="govuk-body">We have not saved your answers. When the service is available, you will have to start again.</p>
+
+      <p class="govuk-body">To report changes contact the benefit team directly.</p>
+
+      <p class="govuk-body">Find their contact details in a letter they have sent to you, or in <a href="">guidance about the benefit on GOV.UK (opens in a new tab)</a>.</p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Sign out",
+          href: "/index"
+        }) }}
+        {{ govukButton({
+          text: "Go back to account home",
+          classes: "govuk-button--secondary",
+          href: "/v05/customer-account/account-home"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

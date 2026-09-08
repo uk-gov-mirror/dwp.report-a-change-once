@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "What type of property is your new address?" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+{% set otherHtml %}
+{{ govukInput({
+  id: "otherInput",
+  name: "otherInput",
+  type: "text",
+  spellcheck: false,
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Other property type"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "propertyType",
+  fieldset: {
+    legend: {
+      text: title,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "houseBungalow",
+      text: "A house, flat or apartment"
+    },
+    {
+      value: "careHome",
+      text: "Care home"
+    },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}

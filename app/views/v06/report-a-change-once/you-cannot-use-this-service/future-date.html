@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "You cannot use this service" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        {{ title }}
+      </h1>
+
+      <p class="govuk-body">Based on your answer, you have not moved yet.</p>
+
+      <p class="govuk-body">When you have moved, you can use this service to tell us your new address.</p>
+
+      <p class="govuk-body"><a href="../when-did-you-move-to-your-new-address.html">Change date of move</a></p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Sign out",
+          href: "/index"
+        }) }}
+        {{ govukButton({
+          text: "Go back to account home",
+          classes: "govuk-button--secondary",
+          href: "/v06/customer-account/account-home"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% set title = "Which country is your new address in?" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "country",
+  fieldset: {
+    legend: {
+      text: title,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "England"
+    },
+    {
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "northernIreland",
+      text: "Northern Ireland"
+    },
+    {
+      value: "anotherCountry",
+      text: "Another country"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}

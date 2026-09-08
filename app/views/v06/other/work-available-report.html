@@ -1,0 +1,48 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set title = "Work Available Report" %}
+
+{% block pageTitle %}
+   {{ title }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-l">
+    {{ title }}
+  </h1>
+
+  <dl class="govuk-body">
+    <dt>GUID:</dt>
+    <dd class="code">023c3305534381c6cc37ec4edc7da2b1cf1c50a8596beb5da3a9aa585cfb0497</dd>
+    <dt>National Insurance number:</dt>
+    <dd>AB 12 34 56 C</dd>
+    <dt>Permanent or temporary move?</dt>
+    <dd>Permanent</dd>
+    <dt>Date of move:</dt>
+    <dd>17 March 2026</dd>
+    <dt>New address:</dt>
+    <dd>
+      1 Washington Street<br />
+      Worcester<br />
+      England<br />
+      WR1 1NL
+    </dd>
+    <dt>Declaration:</dt>
+    <dd>
+      <p class="govuk-body">By submitting this change you agree that, to the best of your knowledge, the details you are providing are complete and correct.</p>
+
+      <p class="govuk-body">If you give wrong or incomplete information, or you do not report changes straight away, you may:</p>
+            
+      <ul class="govuk-list govuk-list--bullet">
+        <li>be prosecuted</li>
+        <li>need to pay a financial penalty</li>
+        <li>have your benefits reduced or stopped</li>
+        <li>be paid too much and have to pay the money back</li>
+      </ul>
+    </dd>
+    <dt>Journey instance ID:</dt>
+    <dd class="code">cm-cms-report-a-change-change-my-address.1.123e4567-e89b-12d3-a456-426614174000</dd>
+    <dt>Date and time:</dt>
+    <dd>2026-03-26 13:57</dd>
+  </dl>
+{% endblock %}
