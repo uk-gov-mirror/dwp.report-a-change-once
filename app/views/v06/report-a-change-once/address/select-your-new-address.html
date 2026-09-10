@@ -25,39 +25,32 @@
             }
           },
           hint: {
-            html: "<p> 6 addresses found for <strong>" + data['postcode'] + "</strong> and <strong>1</strong> <a href='/v05/report-a-change-once/address/find-your-new-address'> Change</a></p>"
+            html: "<p> 6 addresses found for <strong>" + data['postcode'] + "</strong> and <strong>1</strong>. <a href='/v06/report-a-change-once/address/find-your-new-address'> Search again</a></p>"
           },
           items: [
             {
               value: "1",
-              text: "1 Washington Street, Worcester, England WR1 1NL"
+              text: "1 Washington Street, Worcester, WR1 1NL"
             },
             {
               value: "10",
-              text: "10 Washington Street, Worcester, England WR1 1NL"
+              text: "10 Washington Street, Worcester, WR1 1NL"
             },
             {
               value: "11",
-              text: "11 Washington Street, Worcester, England WR1 1NL"
+              text: "11 Washington Street, Worcester, WR1 1NL"
             },
             {
               value: "101",
-              text: "101 Washington Street, Worcester, England WR1 1NL"
+              text: "101 Washington Street, Worcester, WR1 1NL"
             },
             {
               value: "110",
-              text: "110 Washington Street, Worcester, England WR1 1NL"
+              text: "110 Washington Street, Worcester, WR1 1NL"
             },
             {
               value: "111",
-              text: "111 Washington Street, Worcester, England WR1 1NL"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "address-not-listed",
-              text: "My address is not listed"
+              text: "111 Washington Street, Worcester, WR1 1NL"
             }
           ]
         }) }}
@@ -67,6 +60,10 @@
         }) }}
 
       </form>
+
+    <p class="govuk-body">
+      <a href="/v06/report-a-change-once/which-country-is-your-new-address-in" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+    </p>
 
     </div>
   </div>

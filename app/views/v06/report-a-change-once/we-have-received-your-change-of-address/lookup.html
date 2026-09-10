@@ -1,0 +1,57 @@
+{% set showBackLink = false %}
+{% extends "layouts/main.html" %}
+
+{% set title = "We have received your change of address" %}
+
+{% block pageTitle %}
+   {{ title }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: title
+      }) }}
+
+      <p class="govuk-body">We will update your address to:</p>
+      
+      <p class="govuk-body">
+        1 Washington Street<br />Worcester<br />WR1 1NL
+      </p>
+
+      <p class="govuk-body">Your new address will be updated for:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Attendance Allowance</li>
+        <li>Carer's Allowance</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Your new home address will be shown on the personal details page when it is processed. This can take up to 24 hours.
+      </p>
+
+      <p class="govuk-body">
+        If we need further information about your move we will contact you.
+      </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Sign out",
+          href: "/index"
+        }) }}
+        {{ govukButton({
+          text: "Go back to account home",
+          classes: "govuk-button--secondary",
+          href: "/v06/customer-account/personal-details-banner"
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
